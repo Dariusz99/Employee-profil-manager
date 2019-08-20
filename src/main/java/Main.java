@@ -1,5 +1,6 @@
 import net.miginfocom.swing.MigLayout;
 import javax.swing.*;
+import javax.swing.table.TableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -23,7 +24,7 @@ public class Main extends JFrame implements ActionListener
         JTabbedPane jtPane = new JTabbedPane();
         JPanel jpInfo = new JPanel();
         JPanel jpFreeDays = new JPanel();
-        //JLabel jlsalary = new JLabel();
+        JTable jtCalendar = new JTable();
 
     public Main()
     {
@@ -41,11 +42,11 @@ public class Main extends JFrame implements ActionListener
     //userPanel Components
         userPanel.setLayout(new BorderLayout());
 
-        //jpInfo.add(jlsalary);
-
         jtPane.add("Informations", jpInfo);
         jtPane.add("Plan holiday", jpFreeDays);
+
         userPanel.add(jtPane);
+        jpInfo.add(jtCalendar);
 
     //ACTION LISTENERS
         jpfPassword.addActionListener(this);
